@@ -1,9 +1,12 @@
-body, html{
+*{
     margin: 0;
     padding: 0;
-    font-family: poppins, sans-serif;
     box-sizing: border-box;;
 }
+
+body, html {
+    font-family: poppins, sans-serif;
+  }
 
 header {
     background-color: #708090;
@@ -110,14 +113,16 @@ header {
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
-    padding:54px 36px;
-    height: 50vh;
+
+    padding:64px 46px;
+    height: 70vh;
     text-align:center;
 }
 .hero h1{
     color: white;
     font-size: 3rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 40px;
 }
 .hero p{
     color: black;
@@ -127,9 +132,8 @@ header {
 .hero2{
     text-align: center;
     background-color: #708090;
-    margin-top: 3%;
     color: #ffffff;;
-    padding: 10px;
+    padding: 20px;
 }
 
 .hero2 h2{
@@ -145,95 +149,75 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    padding: 10px 20px;
 }
 
 .hero3{
     text-align: center;
     margin-top: 5%;
+
 }
 #service{
     text-align: center;
     margin-top: 5%;
 }
 
-.he {
-    position: relative;
-    cursor: pointer;
-    background-color: #ddd;
-    border-radius: 50px;
-    padding: 5px 10px;
-}
-
-.he::after {
-    content: " More Details in the service page";
-    position: absolute;
-    left: 100%;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    margin-left: 5px;
-    color: #333;
-    font-size: 14px;
-}
-
-.he:hover::after {
-    opacity: 1;
-}
-
-.services-container {
-    position: relative;
-    top: 200px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 1000px;
-    height: 350px;
+.slider-container {
+    max-width: 1200px;
+    margin: 50px auto;
     overflow: hidden;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
+    position: relative;
+     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
 
-.service {
+  .slide {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     position: absolute;
     width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     opacity: 0;
-    transform: translateX(100%);
-    animation: slideInOut 30s infinite ease-in-out;
-}
+    transition: opacity 1s ease-in-out;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
 
-.service:nth-child(1) { animation-delay: 0s; }
-.service:nth-child(2) { animation-delay: 6s; }
-.service:nth-child(3) { animation-delay: 12s; }
-.service:nth-child(4) { animation-delay: 18s; }
-.service:nth-child(5) { animation-delay: 24s; }
+  .slide.active {
+    opacity: 1;
+    position: relative;
+  }
 
-@keyframes slideInOut {
-    0%, 10% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    20%, 100% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-}
+  .service-content {
+    flex: 1 1 50%;
+    padding: 20px;
+  }
 
-.service img {
-    width: 300px;
-    border-radius: 8px;
+  .service-content h3 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 24px;
+  }
+
+  .service-content p {
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .slide img {
+    flex: 1 1 50%;
+    width: 350px;
+    height: 400px;
+    border-radius: 10px;
     object-fit: cover;
 }
 
-.service-content {
-    max-width: 500px;
-}
+
+
+
+  
 
 h3 {
     color: #333;
@@ -243,46 +227,6 @@ p {
     color: #555;
     line-height: 1.6;
 }
-
-
-/*.ser{
-    color: black;
-    padding:54px 36px;
-}
-.ser h2{
-    text-align: center;
-}
-.servicess, .services2s {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 900px;
-    margin: 30px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.pic img {
-    width: 300px;
-    border-radius: 8px;
-}
-
-.service1s, .service1is {
-    max-width: 500px;
-}
-
-h3 {
-    color: #333;
-}
-
-p {
-    color: #555;
-    line-height: 1.6;
-}  */
-
 
 
 
@@ -290,16 +234,17 @@ p {
     text-align: center;
     margin-top: 5%;
     background-color: #708090;
-    padding: 20px;
+    padding: 30px;
     border-bottom: 2px #ffffff dashed;
 }
-.contact h2{
+#contact h2{
     font-size: 2rem;
     color: #ffffff;
 }
 
-.contact p{
+#contact p{
     color: #000000;
+    margin-bottom: 10px;
 }
 .contact-button{
     background-color: #dddddd;
@@ -312,6 +257,9 @@ p {
 #about{
     text-align: center;
 }
+#about h2{
+    margin-top: 5%;
+}
 
 .about-container {
     display: flex;
@@ -320,6 +268,7 @@ p {
     color: #ffffff;
     padding: 40px;
     flex-wrap: wrap; 
+    margin-top: 3%;
 }
 
 .about-box {
@@ -327,6 +276,7 @@ p {
     background-color: #708090;
     color: #ffffff;
     max-width: 50vw;
+    margin-bottom: 10px;
 }
 .about-box p{
     color: #ffffff;
@@ -340,6 +290,7 @@ button{
     border-color: #ffffff;
     border-radius: 10px;
     font-size: 1rem;
+    margin-top: 20px;
 }
 
  button:hover{
@@ -360,17 +311,27 @@ button{
     justify-content: center;
     align-items: center;
 }
-input{
-    width: 300px;
-    height: 30px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+input::placeholder {
+    padding-left: 10px; /* Not margin */
 }
-#message{
+
+
+input[type="text"], input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    margin-bottom: 10px;
+}
+textarea{
     width: 300px;
     height: 100px;
     margin-bottom: 10px;
     border-radius: 10px;
+    padding: 10px;
+}
+textarea::placeholder {
+    padding-left: 10px; /* Not margin */
 }
 
 footer {
@@ -402,11 +363,24 @@ footer p {
         font-size: 1rem;
     }
     .choose {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .slide {
         flex-direction: column;
-    }
-    .services-container {
-        display: none;
-    }
+        text-align: center;
+      }
+
+      .slide img, .service-content {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      .slide img {
+        width: 90%;
+        height: auto;
+      }
+
     .about-container {
         flex-direction: column;
         padding: 20px;
@@ -421,4 +395,17 @@ footer p {
         height: auto;
     }
 }
-
+@media screen and (max-width: 480px){
+    .hero2 h2{
+        font-size: 1.5rem;
+    }   
+    .hero3 h2{
+        font-size: 1.5rem;
+    } 
+    .choose h3{
+        font-size: 1.2rem
+    }
+    #contact h2{
+        font-size: 1.5rem;
+    }
+}

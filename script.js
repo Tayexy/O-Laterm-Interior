@@ -8,3 +8,14 @@ function toggleName() {
     const navLinks = document.querySelector('.nav-link');
     navLinks.classList.toggle('active');
 }
+
+const slides = document.querySelectorAll('.slide');
+let current = 0;
+
+function showNextSlide() {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}
+
+setInterval(showNextSlide, 5000); // Every 5 seconds
