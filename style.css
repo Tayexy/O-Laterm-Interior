@@ -215,7 +215,10 @@ header {
 }
 
 
-
+#service h4{
+ color: #708090; 
+ font-size: 1.5rem;  
+}
 
   
 
@@ -408,4 +411,8 @@ footer p {
     #contact h2{
         font-size: 1.5rem;
     }
+    #service h4{
+        color: #708090; 
+        font-size: 1rem;  
+       }
 }
